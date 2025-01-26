@@ -15,10 +15,10 @@ CREATE TABLE user (
 );
 
 CREATE TABLE menu (
-    menu_id INT AUTO_INCREMENT PRIMARY KEY COMMENT '菜单的唯一标识符，作为主键',
-    menu_name VARCHAR(100) NOT NULL COMMENT '菜单名称，不能为空',
-    description TEXT COMMENT '菜单描述，可存储较长的文本信息，用于描述菜品',
-    price DECIMAL(10, 2) NOT NULL COMMENT '菜品价格，使用 DECIMAL 类型存储，保留两位小数',
+    id INT AUTO_INCREMENT PRIMARY KEY COMMENT '菜单唯一标识符，作为主键',
+    name VARCHAR(100) NOT NULL COMMENT '菜单名称',
+    description TEXT COMMENT '菜单描述',
+    price FLOAT(10) NOT NULL COMMENT '菜品价格',
     category ENUM('主食', '小吃', '饮料', '甜品', '套餐') NOT NULL COMMENT '菜品分类，使用枚举类型，方便筛选和分类菜品',
     image_url VARCHAR(255) COMMENT '菜品主图的 URL，存储菜品主图的网络地址或文件路径',
     image_url_2 VARCHAR(255) COMMENT '菜品的第二张图片的 URL，存储菜品第二张图片的网络地址或文件路径',
