@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhao.smart_canteen.dao.DishDao">
+
+    <resultMap type="com.yuhao.smart_canteen.entity.DishEntity" id="dishMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="description" column="description"/>
+        <result property="price" column="price"/>
+        <result property="category" column="category"/>
+        <result property="imageUrlFirst" column="image_url_first"/>
+        <result property="imageUrlSecond" column="image_url_second"/>
+        <result property="imageUrlThird" column="image_url_third"/>
+        <result property="imageUrlForth" column="image_url_forth"/>
+        <result property="available" column="available"/>
+        <result property="createDate" column="create_date"/>
+        <result property="updateDate" column="update_date"/>
+    </resultMap>
+
+
+</mapper>

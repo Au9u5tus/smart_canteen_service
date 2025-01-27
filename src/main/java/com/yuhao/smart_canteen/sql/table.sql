@@ -51,7 +51,7 @@ CREATE TABLE order_details (
 	unit_price FLOAT NOT NULL COMMENT '该菜品的单价',
 	sub_total FLOAT NOT NULL COMMENT '该菜品的小计金额',
 	FOREIGN KEY ( order_id ) REFERENCES orders ( id ),
-	FOREIGN KEY ( dish_id ) REFERENCES menu ( id )
+	FOREIGN KEY ( dish_id ) REFERENCES dish ( id )
 );
 CREATE TABLE delivery (
 	id VARCHAR ( 50 ) PRIMARY KEY COMMENT '配送ID',
