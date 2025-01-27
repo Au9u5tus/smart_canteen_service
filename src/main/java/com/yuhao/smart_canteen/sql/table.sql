@@ -108,4 +108,4 @@ CREATE TABLE system_dictionary (
                                    is_enabled TINYINT(1) DEFAULT 1 COMMENT '是否启用',
                                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
                                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
-);
+);;;
