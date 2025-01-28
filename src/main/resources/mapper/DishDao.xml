@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.yuhao.smart_canteen.dao.DishDao">
+<mapper namespace="com.yuhao.canteen.dao.DishDao">
 
-    <resultMap type="com.yuhao.smart_canteen.entity.DishEntity" id="dishMap">
+    <resultMap type="com.yuhao.canteen.entity.DishEntity" id="dishMap">
         <result property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="description" column="description"/>

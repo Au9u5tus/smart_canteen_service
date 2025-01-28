@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.yuhao.smart_canteen.dao.UserDao">
+<mapper namespace="com.yuhao.canteen.dao.UserDao">
 
-    <resultMap type="com.yuhao.smart_canteen.entity.UserEntity" id="userMap">
+    <resultMap type="com.yuhao.canteen.entity.UserEntity" id="userMap">
         <result property="id" column="id"/>
         <result property="studentId" column="student_id"/>
         <result property="username" column="username"/>
