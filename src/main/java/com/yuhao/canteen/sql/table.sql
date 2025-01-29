@@ -43,6 +43,7 @@ CREATE TABLE orders (
 	FOREIGN KEY ( user_id ) REFERENCES USER ( id ),
 	FOREIGN KEY ( dish_id ) REFERENCES dish ( id )
 );
+
 CREATE TABLE order_details (
 	id VARCHAR ( 50 ) PRIMARY KEY COMMENT '订单详情ID',
 	order_id VARCHAR ( 50 ) NOT NULL COMMENT '订单ID',
@@ -90,6 +91,15 @@ CREATE TABLE likes (
 	FOREIGN KEY ( user_id ) REFERENCES USER ( id ),
 	FOREIGN KEY ( dish_id ) REFERENCES dish ( id )
 );
+
+create table attachment(
+    id varchar(50) primary key comment '附件ID',
+    name varchar(2000) comment '附件名称',
+    relate_id varchar(50) comment '关联ID',
+    status varchar(2) DEFAULT '1' comment '附件状态',
+    create_time VARCHAR(20) comment '附件创建时间'
+);
+
 
 DROP TABLE IF EXISTS `system_dictionary`;
 CREATE TABLE `system_dictionary`  (
