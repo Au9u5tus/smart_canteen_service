@@ -1,87 +1,41 @@
 package com.yuhao.smart_canteen.controller;
 
+import com.yuhao.smart_canteen.entity.EvaluationEntity;
+import com.yuhao.smart_canteen.service.EvaluationService;
 import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("takeout/evaluation")
+@RequestMapping("evaluation")
 @Api(tags="")
 public class EvaluationController {
-//    @Autowired
-//    private EvaluationService evaluationService;
-//
-//    @GetMapping("page")
-//    @ApiOperation("分页")
-//    @ApiImplicitParams({
-//        @ApiImplicitParam(name = Constant.PAGE, value = "当前页码，从1开始", paramType = "query", required = true, dataType="int") ,
-//        @ApiImplicitParam(name = Constant.LIMIT, value = "每页显示记录数", paramType = "query",required = true, dataType="int") ,
-//        @ApiImplicitParam(name = Constant.ORDER_FIELD, value = "排序字段", paramType = "query", dataType="String") ,
-//        @ApiImplicitParam(name = Constant.ORDER, value = "排序方式，可选值(asc、desc)", paramType = "query", dataType="String")
-//    })
-//    @RequiresPermissions("takeout:evaluation:page")
-//    public Result<PageData<EvaluationDTO>> page(@ApiIgnore @RequestParam Map<String, Object> params){
-//        PageData<EvaluationDTO> page = evaluationService.page(params);
-//
-//        return new Result<PageData<EvaluationDTO>>().ok(page);
-//    }
-//
-//    @GetMapping("{id}")
-//    @ApiOperation("信息")
-//    @RequiresPermissions("takeout:evaluation:info")
-//    public Result<EvaluationDTO> get(@PathVariable("id") Long id){
-//        EvaluationDTO data = evaluationService.get(id);
-//
-//        return new Result<EvaluationDTO>().ok(data);
-//    }
-//
-//    @PostMapping
-//    @ApiOperation("保存")
-//    @LogOperation("保存")
-//    @RequiresPermissions("takeout:evaluation:save")
-//    public Result save(@RequestBody EvaluationDTO dto){
-//        //效验数据
-//        ValidatorUtils.validateEntity(dto, AddGroup.class, DefaultGroup.class);
-//
-//        evaluationService.save(dto);
-//
-//        return new Result();
-//    }
-//
-//    @PutMapping
-//    @ApiOperation("修改")
-//    @LogOperation("修改")
-//    @RequiresPermissions("takeout:evaluation:update")
-//    public Result update(@RequestBody EvaluationDTO dto){
-//        //效验数据
-//        ValidatorUtils.validateEntity(dto, UpdateGroup.class, DefaultGroup.class);
-//
-//        evaluationService.update(dto);
-//
-//        return new Result();
-//    }
-//
-//    @DeleteMapping
-//    @ApiOperation("删除")
-//    @LogOperation("删除")
-//    @RequiresPermissions("takeout:evaluation:delete")
-//    public Result delete(@RequestBody Long[] ids){
-//        //效验数据
-//        AssertUtils.isArrayEmpty(ids, "id");
-//
-//        evaluationService.delete(ids);
-//
-//        return new Result();
-//    }
-//
-//    @GetMapping("export")
-//    @ApiOperation("导出")
-//    @LogOperation("导出")
-//    @RequiresPermissions("takeout:evaluation:export")
-//    public void export(@ApiIgnore @RequestParam Map<String, Object> params, HttpServletResponse response) throws Exception {
-//        List<EvaluationDTO> list = evaluationService.list(params);
-//
-//        ExcelUtils.exportExcelToTarget(response, null, list, EvaluationExcel.class);
-//    }
+    @Autowired
+    private EvaluationService evaluationService;
 
+// 根据菜品 ID 查询评价
+    @GetMapping("/dish/{dishId}")
+    public List<EvaluationEntity> getCommentsByDishId(@PathVariable Long dishId) {
+        return evaluationService.getEvaluationsByDishId(dishId);
+    }
+    // 根据用户 ID 查询评价
+    @GetMapping("/user/{userId}")
+    public List<EvaluationEntity> getCommentsByUserId(@PathVariable Long userId) {
+        return evaluationService.getEvaluationsByUserId(userId);
+    }
+    // 根据评价 ID 删除评价
+    @GetMapping("/deleteComment/{id}")
+    public void deleteComment(@PathVariable Long id) {
+        evaluationService.deleteEvaluation(id);
+    }
+    // 根据评价 ID 查询评价
+    @GetMapping("/getCommentById/{id}")
+    public EvaluationEntity getCommentById(@PathVariable Long id) {
+        return evaluationService.getEvaluationById(id);
+    }
 }

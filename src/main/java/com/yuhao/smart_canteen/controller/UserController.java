@@ -3,6 +3,7 @@ package com.yuhao.smart_canteen.controller;
 import com.yuhao.smart_canteen.common.Result;
 import com.yuhao.smart_canteen.constant.Constant;
 import com.yuhao.smart_canteen.dto.UserDTO;
+import com.yuhao.smart_canteen.entity.*;
 import com.yuhao.smart_canteen.page.PageData;
 import com.yuhao.smart_canteen.service.UserService;
 import io.swagger.annotations.Api;
@@ -12,94 +13,40 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 
 @RestController
-//@RequestMapping()
+@RequestMapping("user")
 @Api(tags="")
 public class UserController {
     @Autowired
     private UserService userService;
-
-    @PostMapping("login")
-    public Result<String> login(@RequestBody UserDTO userDTO ){
-        return userService.login(userDTO);
+    // 创建用户
+    @PostMapping
+    public UserEntity createUser(@RequestBody UserEntity user) {
+        return userService.createUser(user);
     }
-
-
-
-    @GetMapping("page")
-    @ApiOperation("分页")
-    @ApiImplicitParams({
-        @ApiImplicitParam(name = Constant.PAGE, value = "当前页码，从1开始", paramType = "query", required = true, dataType="int") ,
-        @ApiImplicitParam(name = Constant.LIMIT, value = "每页显示记录数", paramType = "query",required = true, dataType="int") ,
-        @ApiImplicitParam(name = Constant.ORDER_FIELD, value = "排序字段", paramType = "query", dataType="String") ,
-        @ApiImplicitParam(name = Constant.ORDER, value = "排序方式，可选值(asc、desc)", paramType = "query", dataType="String")
-    })
-    //@RequiresPermissions("takeout:user:page")
-    public Result<PageData<UserDTO>> page(@RequestParam Map<String, Object> params){
-        PageData<UserDTO> page = userService.page(params);
-
-        return new Result<PageData<UserDTO>>().ok(page);
+    // 根据 ID 获取用户
+    @GetMapping("/{id}")
+    public UserEntity getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
     }
-
-//    @GetMapping("{id}")
-//    @ApiOperation("信息")
-//    @RequiresPermissions("takeout:user:info")
-//    public Result<UserDTO> get(@PathVariable("id") Long id){
-//        UserDTO data = userService.get(id);
-//
-//        return new Result<UserDTO>().ok(data);
-//    }
-//
-//    @PostMapping
-//    @ApiOperation("保存")
-//    @LogOperation("保存")
-//    @RequiresPermissions("takeout:user:save")
-//    public Result save(@RequestBody UserDTO dto){
-//        //效验数据
-//        ValidatorUtils.validateEntity(dto, AddGroup.class, DefaultGroup.class);
-//
-//        userService.save(dto);
-//
-//        return new Result();
-//    }
-//
-//    @PutMapping
-//    @ApiOperation("修改")
-//    @LogOperation("修改")
-//    @RequiresPermissions("takeout:user:update")
-//    public Result update(@RequestBody UserDTO dto){
-//        //效验数据
-//        ValidatorUtils.validateEntity(dto, UpdateGroup.class, DefaultGroup.class);
-//
-//        userService.update(dto);
-//
-//        return new Result();
-//    }
-//
-//    @DeleteMapping
-//    @ApiOperation("删除")
-//    @LogOperation("删除")
-//    @RequiresPermissions("takeout:user:delete")
-//    public Result delete(@RequestBody Long[] ids){
-//        //效验数据
-//        AssertUtils.isArrayEmpty(ids, "id");
-//
-//        userService.delete(ids);
-//
-//        return new Result();
-//    }
-//
-//    @GetMapping("export")
-//    @ApiOperation("导出")
-//    @LogOperation("导出")
-//    @RequiresPermissions("takeout:user:export")
-//    public void export(@ApiIgnore @RequestParam Map<String, Object> params, HttpServletResponse response) throws Exception {
-//        List<UserDTO> list = userService.list(params);
-//
-//        ExcelUtils.exportExcelToTarget(response, null, list, UserExcel.class);
-//    }
+    // 获取所有用户
+    @GetMapping
+    public List<UserEntity> getAllUsers() {
+        return userService.getAllUsers();
+    }
+    // 更新用户信息
+    @PutMapping
+    public UserEntity updateUser(@RequestBody UserEntity user) {
+        return userService.updateUser(user);
+    }
+    // 删除用户
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+    }
 
 }

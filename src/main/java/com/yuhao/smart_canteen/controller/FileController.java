@@ -58,14 +58,11 @@ public class FileController {
         String filePath = "uploads/example.txt"; // 替换为实际要下载的文件路径
         File file = new File(filePath);
         Resource resource = new FileSystemResource(file);
-
         if (!resource.exists()) {
             return ResponseEntity.notFound().build();
         }
-
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=example.txt");
-
         return ResponseEntity.ok()
                 .headers(headers)
                 .contentLength(file.length())
