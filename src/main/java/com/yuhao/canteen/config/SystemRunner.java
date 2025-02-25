@@ -1,4 +1,4 @@
-package com.yuhao.smart_canteen.config;
+package com.yuhao.canteen.config;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
