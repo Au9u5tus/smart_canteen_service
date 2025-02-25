@@ -9,7 +9,9 @@ import com.yuhao.smart_canteen.entity.OrdersEntity;
 import com.yuhao.smart_canteen.service.OrdersService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class OrdersServiceImpl extends CrudServiceImpl<OrdersDao, OrdersEntity, OrdersDTO> implements OrdersService {
@@ -25,4 +27,28 @@ public class OrdersServiceImpl extends CrudServiceImpl<OrdersDao, OrdersEntity, 
     }
 
 
+    @Override
+    public OrdersEntity createOrder(long userId, double totalPrice) {
+        return null;
+    }
+
+    @Override
+    public List<OrdersEntity> getAllOrders() {
+        return null;
+    }
+
+    @Override
+    public Optional<OrdersEntity> getOrderById(long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public OrdersEntity updateOrderStatus(long id, String status) {
+        return null;
+    }
+
+    @Override
+    public void deleteOrder(long id) {
+
+    }
 }

@@ -9,6 +9,7 @@ import com.yuhao.smart_canteen.entity.EvaluationEntity;
 import com.yuhao.smart_canteen.service.EvaluationService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -25,4 +26,23 @@ public class EvaluationServiceImpl extends CrudServiceImpl<EvaluationDao, Evalua
     }
 
 
+    @Override
+    public List<EvaluationEntity> getEvaluationsByDishId(long dishId) {
+        return null;
+    }
+
+    @Override
+    public List<EvaluationEntity> getEvaluationsByUserId(long userId) {
+        return null;
+    }
+
+    @Override
+    public void deleteEvaluation(long id) {
+
+    }
+
+    @Override
+    public EvaluationEntity getEvaluationById(long id) {
+        return null;
+    }
 }

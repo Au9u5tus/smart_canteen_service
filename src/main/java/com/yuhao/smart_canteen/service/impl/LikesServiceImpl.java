@@ -2,6 +2,7 @@ package com.yuhao.smart_canteen.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.yuhao.smart_canteen.common.Result;
 import com.yuhao.smart_canteen.dao.LikesDao;
 import com.yuhao.smart_canteen.dto.LikesDTO;
 import com.yuhao.smart_canteen.entity.LikesEntity;
@@ -30,4 +31,23 @@ public class LikesServiceImpl extends CrudServiceImpl<LikesDao, LikesEntity, Lik
     }
 
 
+    @Override
+    public Result likeDish(Long userId, Long dishId) {
+        return null;
+    }
+
+    @Override
+    public Result cancelLikeDish(Long userId, Long dishId) {
+        return null;
+    }
+
+    @Override
+    public Result hasLikedDish(Long userId, Long dishId) {
+        return null;
+    }
+
+    @Override
+    public int getDishLikeCount(Long dishId) {
+        return 0;
+    }
 }

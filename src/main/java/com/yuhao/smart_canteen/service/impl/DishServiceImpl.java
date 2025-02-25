@@ -3,6 +3,7 @@ package com.yuhao.smart_canteen.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yuhao.smart_canteen.dao.DishDao;
 import com.yuhao.smart_canteen.dto.DishDTO;
 import com.yuhao.smart_canteen.entity.DishEntity;
@@ -26,4 +27,28 @@ public class DishServiceImpl extends CrudServiceImpl<DishDao, DishEntity, DishDT
     }
 
 
+    @Override
+    public Page<DishEntity> getDishesByPage(int page, int size) {
+        return null;
+    }
+
+    @Override
+    public DishEntity addDish(DishEntity dish) {
+        return null;
+    }
+
+    @Override
+    public void deleteDish(long id) {
+
+    }
+
+    @Override
+    public DishEntity updateDish(DishEntity dishEntity) {
+        return null;
+    }
+
+    @Override
+    public DishEntity getDishById(long id) {
+        return null;
+    }
 }

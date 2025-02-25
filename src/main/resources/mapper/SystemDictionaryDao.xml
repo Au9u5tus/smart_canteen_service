@@ -3,7 +3,7 @@
 
 <mapper namespace="com.yuhao.smart_canteen.dao.SystemDictionaryDao">
 
-    <resultMap type="com.yuhao.smart_canteen.entity.SystemDictionaryEntity" id="systemDictionaryMap">
+    <resultMap type="com.yuhao.smart_canteen.entity.DictionaryEntity" id="systemDictionaryMap">
         <result property="dictionaryId" column="dictionary_id"/>
         <result property="dictionaryType" column="dictionary_type"/>
         <result property="dictionaryKey" column="dictionary_key"/>

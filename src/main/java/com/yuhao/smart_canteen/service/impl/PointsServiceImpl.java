@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.yuhao.smart_canteen.dao.PointsDao;
 import com.yuhao.smart_canteen.dto.PointsDTO;
 import com.yuhao.smart_canteen.entity.PointsEntity;
+import com.yuhao.smart_canteen.entity.UserEntity;
 import com.yuhao.smart_canteen.service.PointsService;
 import org.springframework.stereotype.Service;
 
@@ -31,4 +32,18 @@ public class PointsServiceImpl extends CrudServiceImpl<PointsDao, PointsEntity, 
     }
 
 
+    @Override
+    public Integer getUserPoints(long userId) {
+        return null;
+    }
+
+    @Override
+    public UserEntity addPoints(long userId, double pointsToAdd) {
+        return null;
+    }
+
+    @Override
+    public UserEntity reducePoints(Long userId, int pointsToReduce) {
+        return null;
+    }
 }

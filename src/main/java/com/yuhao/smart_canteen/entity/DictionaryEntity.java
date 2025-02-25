@@ -1,13 +1,15 @@
 package com.yuhao.smart_canteen.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @TableName("system_dictionary")
-public class SystemDictionaryEntity {
+public class DictionaryEntity {
 
     /**
      * 字典的唯一标识符，作为主键
@@ -41,4 +43,7 @@ public class SystemDictionaryEntity {
      * 更新时间，记录字典项的最后更新时间，每次更新自动更新为当前时间戳
      */
 	private Date updatedAt;
+
+	@TableField(exist = false)
+	private List<String> local;
 }

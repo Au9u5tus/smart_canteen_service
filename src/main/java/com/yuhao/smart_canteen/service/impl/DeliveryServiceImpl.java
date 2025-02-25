@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.yuhao.smart_canteen.dao.DeliveryDao;
 import com.yuhao.smart_canteen.dto.DeliveryDTO;
 import com.yuhao.smart_canteen.entity.DeliveryEntity;
+import com.yuhao.smart_canteen.entity.OrdersEntity;
+import com.yuhao.smart_canteen.entity.UserEntity;
 import com.yuhao.smart_canteen.service.DeliveryService;
 import org.springframework.stereotype.Service;
 
@@ -25,4 +27,18 @@ public class DeliveryServiceImpl extends CrudServiceImpl<DeliveryDao, DeliveryEn
     }
 
 
+    @Override
+    public OrdersEntity assignDeliveryman(Long orderId) {
+        return null;
+    }
+
+    @Override
+    public OrdersEntity updateOrderStatus(long orderId, String status) {
+        return null;
+    }
+
+    @Override
+    public Iterable<UserEntity> getAllDeliverymen() {
+        return null;
+    }
 }
