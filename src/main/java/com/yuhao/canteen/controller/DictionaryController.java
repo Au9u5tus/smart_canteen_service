@@ -1,6 +1,6 @@
 package com.yuhao.canteen.controller;
 
-import com.yuhao.canteen.entity.DictionaryEntity;
+import com.yuhao.canteen.entity.Dictionary;
 import com.yuhao.canteen.service.DictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class DictionaryController {
     private DictionaryService dictionaryService;
 
     @GetMapping("/getAllDicts")
-    public List<DictionaryEntity> getAllDicts(){
+    public List<Dictionary> getAllDicts(){
        return  dictionaryService.list();
     }
 }

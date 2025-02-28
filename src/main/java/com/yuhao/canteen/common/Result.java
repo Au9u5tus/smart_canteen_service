@@ -1,5 +1,6 @@
 package com.yuhao.canteen.common;
 
+import com.yuhao.canteen.constant.Constant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -22,9 +23,23 @@ public class Result<T>  {
     @ApiModelProperty(value = "响应数据")
     private T data;
 
-    public Result<T> ok(T data) {
-        this.setData(data);
-        return this;
+    public static <T>Result<T> ok(T data,String message) {
+        Result<T> result=new Result<>();
+        result.setCode(Constant.SUCCESS);
+        result.setMsg(message);
+        result.setData(data);
+        return result;
+    }
+
+    public static <T>Result<T> ok(String message) {
+        return ok(null,message);
+    }
+
+    public static <T>Result<T> failture(String msg) {
+        Result<T> result=new Result<>();
+        result.setCode(Constant.FAIL);
+        result.setMsg(msg);
+        return result;
     }
 
     public boolean success(){

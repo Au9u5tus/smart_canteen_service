@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @TableName("points")
-public class PointsEntity {
+public class Points {
 
     /**
      * 积分ID

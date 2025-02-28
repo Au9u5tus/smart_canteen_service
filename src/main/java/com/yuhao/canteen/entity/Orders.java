@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @TableName("orders")
-public class OrdersEntity {
+public class Orders {
 
     /**
      * 订单ID

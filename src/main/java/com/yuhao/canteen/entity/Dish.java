@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @TableName("dish")
-public class DishEntity {
+public class Dish {
 
     /**
      * 菜单唯一标识符，作为主键

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @TableName("system_dictionary")
-public class DictionaryEntity {
+public class Dictionary {
 
     /**
      * 字典的唯一标识符，作为主键

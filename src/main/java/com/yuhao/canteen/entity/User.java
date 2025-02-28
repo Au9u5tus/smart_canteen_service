@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @TableName("user")
-public class UserEntity {
+public class User {
 
     /**
      * 用户ID

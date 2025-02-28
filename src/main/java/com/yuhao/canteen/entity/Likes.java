@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @TableName("likes")
-public class LikesEntity {
+public class Likes {
 
     /**
      * 点赞ID

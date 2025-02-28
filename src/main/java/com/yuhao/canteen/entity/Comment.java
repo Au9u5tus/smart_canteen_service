@@ -1,4 +1,4 @@
 package com.yuhao.canteen.entity;
 
-public class CommentEntity {
+public class Comment {
 }
