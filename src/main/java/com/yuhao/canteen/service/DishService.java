@@ -6,5 +6,8 @@ import com.yuhao.canteen.common.Result;
 import com.yuhao.canteen.entity.Dish;
 
 public interface DishService extends IService<Dish> {
-    Result<Page<Dish>> findDishInPage(Page<Dish> page, Dish dish);
+    Result<Page<Dish>> pageQueryDish(Dish dish);
+    Result addDish(Dish dish);
+    Result updateDish(Dish dish);
+    Result deleteDish(String id);
 }

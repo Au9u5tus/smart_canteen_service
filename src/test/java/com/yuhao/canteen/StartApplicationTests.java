@@ -1,5 +1,6 @@
 package com.yuhao.canteen;
 
+import cn.hutool.core.util.NumberUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,6 +19,11 @@ class StartApplicationTests {
 				String secretKey = Base64.getEncoder().encodeToString(keyBytes);
 				System.out.println("生成的密钥: " + secretKey);
 
+	}
+	@Test
+	void test(){
+		//System.out.println(NumberUtil.decimalFormat("0.0",3.12455666f));
+		 System.out.print(String.valueOf(Math.random()).substring(2,5));
 	}
 
 }

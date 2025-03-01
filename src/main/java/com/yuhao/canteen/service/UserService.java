@@ -6,6 +6,7 @@ import com.yuhao.canteen.entity.User;
 
 public interface UserService extends IService<User> {
     Result register(User user);
-    Result login(User user);
+    Result<String> login(User user);
     User findUserByUserName(String username);
+    User getCurrentUser();
 }

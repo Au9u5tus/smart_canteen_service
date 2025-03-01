@@ -10,6 +10,10 @@ public interface Constant {
      */
     int FAIL = 0;
     /**
+     * 未登录
+     */
+    int UNLOGIN=-1;
+    /**
      * 菜单根节点标识
      */
     Long MENU_ROOT = 0L;
@@ -60,4 +64,20 @@ public interface Constant {
      */
     String SLAT = "SMART_CANTEEN_IS_OK";
 
+    int EXIST=1;
+
+    int DELETED=0;
+
+
+    String USER_PREFIX="USER_";
+
+    String ORDER_PREFIX="ORDER_";
+
+    String ORDER_DETAIL_PREFOX="ORDER_DETAIL_";
+
+    String FILE_PREFIX="FILE_";
+
+    String DISH_PREFIX="DISH_";
+
+    String UPLOAD_DIR = "uploads/";
 }

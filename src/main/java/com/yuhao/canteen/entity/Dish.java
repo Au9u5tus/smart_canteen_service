@@ -1,5 +1,7 @@
 package com.yuhao.canteen.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -10,6 +12,7 @@ public class Dish {
     /**
      * 菜单唯一标识符，作为主键
      */
+    @TableId
 	private String id;
     /**
      * 菜单名称
@@ -30,19 +33,7 @@ public class Dish {
     /**
      * 菜品主图的 URL
      */
-	private String imageUrlFirst;
-    /**
-     * 菜品的第二张图
-     */
-	private String imageUrlSecond;
-    /**
-     * 菜品的第三张图
-     */
-	private String imageUrlThird;
-    /**
-     * 菜品的第四张图
-     */
-	private String imageUrlForth;
+	private String imageUrl;
     /**
      * 菜品是否可用
      */
@@ -55,4 +46,11 @@ public class Dish {
      * 菜品更新日期
      */
 	private String updateDate;
+
+    @TableField(exist = false)
+    private String keyword;
+    @TableField(exist = false)
+    private long current;
+    @TableField(exist = false)
+    private long size;
 }

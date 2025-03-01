@@ -20,6 +20,10 @@ public class OrderDetails {
      */
 	private String dishId;
     /**
+     * 用户Id
+     */
+    private String userId;
+    /**
      * 菜品订单中的数量
      */
 	private Integer quantity;

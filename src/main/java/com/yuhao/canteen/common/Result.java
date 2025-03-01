@@ -10,8 +10,8 @@ public class Result<T>  {
     /**
      * 编码：0表示成功，其他值表示失败
      */
-    @ApiModelProperty(value = "编码：0表示成功，其他值表示失败")
-    private int code = 0;
+    @ApiModelProperty(value = "编码：1表示成功，其他值表示失败")
+    private int code = 1;
     /**
      * 消息内容
      */

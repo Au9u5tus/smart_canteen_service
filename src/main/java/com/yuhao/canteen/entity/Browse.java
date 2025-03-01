@@ -4,6 +4,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("comment")
-public class Comment {
+@TableName("browse")
+public class Browse {
 }

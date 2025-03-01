@@ -43,4 +43,9 @@ public class JwtServiceImpl  implements JwtService {
             return null;
         }
     }
+
+    public  String refreshToken(String token) {
+        String username = validateTokenAndGetUsername(token);
+        return generateToken(username);
+    }
 }

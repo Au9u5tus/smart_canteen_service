@@ -18,7 +18,7 @@ public class Orders {
     /**
      * 菜品ID
      */
-	private String dishId;
+	//private String dishId;
     /**
      * 菜品的数量
      */
