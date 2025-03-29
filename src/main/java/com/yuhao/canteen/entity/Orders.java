@@ -1,7 +1,11 @@
 package com.yuhao.canteen.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @TableName("orders")
@@ -10,6 +14,7 @@ public class Orders {
     /**
      * 订单ID
      */
+    @TableId
 	private String id;
     /**
      * 用户ID
@@ -51,4 +56,13 @@ public class Orders {
      * 送餐状态
      */
 	private String delStatus;
+
+    @TableField(exist = false)
+    private String keyword;
+    @TableField(exist = false)
+    private long current;
+    @TableField(exist = false)
+    private long size;
+    @TableField(exist = false)
+    private List<String> detailsId;
 }

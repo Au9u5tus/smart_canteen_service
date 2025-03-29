@@ -38,7 +38,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
             return Result.failture("添加菜品成功！");
         }
     }
-
+    //更新菜品
     @Override
     public Result updateDish(Dish dish) {
         try{
@@ -49,7 +49,7 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
             return Result.failture("修改菜品成功！");
         }
     }
-
+    //删除菜品
     @Override
     public Result deleteDish(String id) {
         boolean result = removeById(id);

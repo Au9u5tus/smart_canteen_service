@@ -79,5 +79,9 @@ public interface Constant {
 
     String DISH_PREFIX="DISH_";
 
+    String POINT_PREFIX="POINT_";
+
+    String DELIVERY_PREFIX="DELIVERY_";
+
     String UPLOAD_DIR = "uploads/";
 }

@@ -18,11 +18,6 @@ import java.util.concurrent.locks.Condition;
 public class DishController {
     @Autowired
     private DishService dishService;
-//    //获取菜品ID
-//    @GetMapping("getDishId")
-//    public Result<String> getDishId() {
-//        return Result.ok(IdUtils.generateId(Constant.DISH_PREFIX));
-//    }
     // 添加菜品
     @PostMapping("addDish")
     public Result addDish(@RequestBody Dish dish) {
@@ -38,7 +33,7 @@ public class DishController {
     public Result deleteDish(@PathVariable String id) {
         return dishService.deleteDish(id);
     }
-    // 菜品分页查询（带关键词搜索）
+    // 菜品分页查询
     @PostMapping("pageQueryDish")
     public Result<Page<Dish>> pageQueryDish(@RequestBody Dish dish) {
         return dishService.pageQueryDish(dish);

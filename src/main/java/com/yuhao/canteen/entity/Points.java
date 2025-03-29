@@ -18,7 +18,7 @@ public class Points {
     /**
      * 积分数量
      */
-	private Integer amount;
+	private Float amount;
     /**
      * 积分交易类型
      */

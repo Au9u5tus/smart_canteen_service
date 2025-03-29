@@ -117,4 +117,7 @@ public class User {
      * 用户账号的状态，例如可用、禁用等。
      */
     private String status;
+
+    private int current;
+    private int size;
 }

@@ -1,8 +1,8 @@
 package com.yuhao.canteen.service.impl;
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yuhao.canteen.common.IdUtils;
 import com.yuhao.canteen.common.Md5Utils;
@@ -62,12 +62,14 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             return Result.ok(token,"登录成功！");
         }
     }
-
+    //通过用户名获取用户信息
     public User findUserByUserName(String username) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username", username);
         return getOne(queryWrapper);
     }
+
+
 
     public User getCurrentUser(){
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -78,5 +80,32 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         }
         return null;
+    }
+    //查询用户列表
+    @Override
+    public Result<Page<User>> pageQueryDish(User user) {
+        Page<User> page = new Page<>(user.getCurrent(), user.getSize());
+        QueryWrapper<User> queryWrapper=new QueryWrapper<>();
+        queryWrapper.eq("status", Constant.EXIST);
+        Page<User> pageUser=page(page,queryWrapper);
+        return Result.ok(pageUser,"用户查询成功！");
+    }
+    //更新用户信息
+    @Override
+    public Result updateUser(User user) {
+        updateById(user);
+        return Result.ok("更新用户信息成功！");
+    }
+    //删除用户
+    @Override
+    public Result deleteUser(Integer id) {
+        removeById(id);
+        return Result.ok("删除用户信息成功！");
+    }
+    //通过userId获取用户信息
+    public User findUserByUserId(String userId){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("id", userId);
+        return getOne(queryWrapper);
     }
 }

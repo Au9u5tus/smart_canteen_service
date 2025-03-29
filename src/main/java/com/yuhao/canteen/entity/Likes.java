@@ -24,4 +24,10 @@ public class Likes {
      * 点赞时间
      */
 	private String likedTime;
+
+    private int current;
+
+    private int size;
+
+    private String name;
 }

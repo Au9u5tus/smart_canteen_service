@@ -37,6 +37,7 @@ CREATE TABLE orders
     quantity    INT         NOT NULL COMMENT '菜品的数量',
     order_time  VARCHAR(20) NOT NULL COMMENT '订单生成时间',
     total_price FLOAT(10)   NOT NULL COMMENT '订单的总价',
+    type INT NOT NULL COMMENT '订单配送方式',
     status      VARCHAR(2) DEFAULT '1' COMMENT '订单状态',
     pay_method  VARCHAR(2) DEFAULT '1' COMMENT '支付方式',
     address     VARCHAR(255) COMMENT '送餐地址',
